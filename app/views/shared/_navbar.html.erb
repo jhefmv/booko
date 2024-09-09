@@ -1,22 +1,36 @@
 
-<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-primary" data-bs-theme="dark">
-  <div class="container-fluid">
-    <%= link_to 'Booko', root_path, class: 'navbar-brand' %>
-    <%# <span class="navbar-text">Your Ultimate Pizza!</span> %>
+<nav class="navbar sticky-top fixed-top navbar-expand-md" data-bs-theme="light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <%= link_to image_tag("xyz/logo.svg", class: "d-inline-block align-text-top"), root_path %>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <!--
+      <div class="col-sm-3 mx-auto">
+        <form class="d-flex" role="search">
+          <input type="text" class="form-control rounded-4" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+        </form>
+      </div>
+      <ul class="navbar-nav fw-semibold">
         <li class="nav-item">
-          <%= link_to 'Pizzas', root_path, class: 'nav-link' %>
+          <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Toppings', root_path, class: 'nav-link' %>
+          <%= link_to "Rent Textbooks", "#", class: "nav-link" %>
         </li>
-        -->
+        <li class="nav-item">
+          <%= link_to "Buy Textbooks", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sell Textbooks", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "En", "#", class: "nav-link lang-selector ps-4" %>
+        </li>
       </ul>
+      <button class="btn btn-primary btn-bd-primary" type="submit">Contact</button>
     </div>
   </div>
 </nav>

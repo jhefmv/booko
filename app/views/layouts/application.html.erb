@@ -14,11 +14,10 @@
     <div class="wrapper">
       <div class="main">
         <%= render "shared/navbar" %>
-        <main class="content">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+        <main class="container content">
           <%= yield %>
         </main>
+        <%= render "shared/footernav" %>
       </div>
     </div>
   </body>

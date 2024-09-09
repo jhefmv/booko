@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "ISBN", type: :request do
+RSpec.describe "ISBN API", type: :request do
   let(:isbn13) { "978-1-60309-398-9" }
   let(:isbn10) { "1-60309-398-2" }
   let(:isbn_url) { "/isbn" }
@@ -40,7 +40,7 @@ RSpec.describe "ISBN", type: :request do
     end
   end
 
-  describe "GET /show" do
+  describe "GET /isbn/:isbn" do
     let(:show_url) { isbn_url }
     let(:book) { create(:book, isbn13: isbn13, isbn10: isbn10) }
 

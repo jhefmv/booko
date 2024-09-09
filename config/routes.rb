@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get "isbn/:isbn", to: "isbn#show", defaults: { format: "json" }
   post "isbn/convert", to: "isbn#convert", defaults: { format: "json" }
 
+  # book info by isbn
+  get "book/:isbn", to: "books#show"
+
   # catch all, redirect missing routes to home
   match "*unmatched", to: "application#page_not_found", via: :all
 end

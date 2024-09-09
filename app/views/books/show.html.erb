@@ -1,0 +1,43 @@
+<div class="container-fluid p-0">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="h2 fw-bold mb-5">Search Result</h1>
+      <div class="card mb-3 border-0">
+        <div class="row g-0">
+          <div class="col-md-3">
+            <%= image_tag("books/doughnuts & Doom.png", class: "img-fluid img-thumbnail", alt: @book.title) %>
+          </div>
+          <div class="col-md-1">&nbsp;</div>
+          <div class="col-md-6">
+            <div class="card-body book-card lh-lg">
+              <h3 class="card-title h4 fw-bold"><%= @book.title %></h3>
+              <p class="card-text fw-bold">by <%= @book.author_names %></p>
+              <ul class="list-unstyled">
+                <li>
+                  <span class="fw-bold">Edition:</span>&nbsp;
+                  <span class="book-info fw-bold"><%= @book.edition %></span>
+                </li>
+                <li>
+                  <span class="fw-bold">Price:</span>&nbsp;
+                  <span class="book-info fw-bold"><%= @book.list_price %></span>
+                </li>
+                <li>
+                  <span class="fw-bold">ISBN:</span>&nbsp;
+                  <span class="book-info fw-bold"><%= @book.isbn13 %></span>
+                </li>
+                <li>
+                  <span class="fw-bold">Publication Year:</span>&nbsp;
+                  <span class="book-info fw-bold"><%= @book.publication_year %></span>
+                </li>
+                <li>
+                  <span class="fw-bold">Publisher:</span>&nbsp;
+                  <span class="book-info fw-bold"><%= @book.publisher.name %></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
