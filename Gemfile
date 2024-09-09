@@ -44,6 +44,9 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# https://github.com/rails/requestjs-rails
+gem "requestjs-rails"
+
 # https://jsonapi-rb.org/
 gem "jsonapi-rails"
 

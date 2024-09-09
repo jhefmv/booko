@@ -5,3 +5,5 @@ import "controllers"
 // bootstrap
 import "popper"
 import "bootstrap"
+
+import "@rails/request.js"

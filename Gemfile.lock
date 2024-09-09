@@ -237,6 +237,8 @@ GEM
     regexp_parser (2.9.2)
     reline (0.5.9)
       io-console (~> 0.5)
+    requestjs-rails (0.0.12)
+      railties (>= 6.1.0)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.1)
@@ -351,6 +353,7 @@ DEPENDENCIES
   pry
   puma (>= 5.0)
   rails (~> 7.1.4)
+  requestjs-rails
   rspec-rails
   rubocop-rails
   sassc-rails

@@ -9,8 +9,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="col-sm-3 mx-auto">
-        <form class="d-flex" role="search">
-          <input type="text" class="form-control rounded-4" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+        <form class="d-flex" role="search" data-controller="isbn-search">
+          <%= text_field_tag :isbn, "", placeholder: "Search",
+                class: "form-control rounded-4", "aria-label": "Search",
+                data: { action: "keydown.enter->isbn-search#search", "isbn-search-target": "isbn" }
+                %>
         </form>
       </div>
       <ul class="navbar-nav fw-semibold">
