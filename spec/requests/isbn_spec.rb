@@ -62,7 +62,7 @@ RSpec.describe "ISBN API", type: :request do
     context "when book does not exist" do
       it "returns error 404" do
         get "#{show_url}/4-19-830127-1.json"
-        expect(response.body).to include("Book not found")
+        expect(JSON.parse(response.body)["error"]).to eql("Book not found")
         expect(response).to be_not_found
       end
     end
@@ -70,7 +70,7 @@ RSpec.describe "ISBN API", type: :request do
     context "when ISBN is invalid" do
       it "returns error 400" do
         get "#{show_url}/978-1-60309.json"
-        expect(response.body).to include("ISBN is not valid")
+        expect(JSON.parse(response.body)["error"]).to eql("ISBN is not valid")
         expect(response).to be_bad_request
       end
     end

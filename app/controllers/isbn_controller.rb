@@ -16,10 +16,10 @@ class IsbnController < ApplicationApiController
       if book.present?
         render jsonapi: book, root: "book"
       else
-        render json: "Book not found", status: :not_found
+        render json: { error: "Book not found" }, status: :not_found
       end
     else
-      render json: "ISBN is not valid", status: :bad_request
+      render json: { error: "ISBN is not valid" }, status: :bad_request
     end
   end
 
