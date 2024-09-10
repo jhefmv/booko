@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Publisher, type: :model do
-  subject { described_class.new }
+  subject { described_class.new(name: "Good Will Hunting") }
 
   describe "associations" do
     it { is_expected.to have_many(:books) }

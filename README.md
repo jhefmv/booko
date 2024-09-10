@@ -28,7 +28,7 @@ To create tables initially and seed books:
 bin/rails db:prepare db:seed
 ```
 
-Alternatively, SQL Insert statements can be found in `db/sqlite3.sql`
+Alternatively, SQL Insert statements can be found in `db/sqlite3_dump.sql`
 
 To drop, create database and create tables:
 
@@ -39,7 +39,7 @@ bin/rails db:drop db:create db:migrate
 To import the dump file:
 
 ```
-sqlite3 storage/development.sqlite3 < db/sqlite3.sql
+sqlite3 storage/development.sqlite3 < db/sqlite3_dump.sql
 ```
 
 ## Running locally

@@ -12,9 +12,9 @@
 
 ActiveRecord::Schema[7.1].define(version: 2024_09_06_003059) do
   create_table "authors", force: :cascade do |t|
-    t.string "first_name"
+    t.string "first_name", null: false
     t.string "middle_name"
-    t.string "last_name"
+    t.string "last_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,11 +30,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_06_003059) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "title"
-    t.string "isbn13"
+    t.string "title", null: false
+    t.string "isbn13", null: false
     t.string "isbn10"
-    t.decimal "list_price", precision: 10, scale: 2
-    t.integer "publication_year", limit: 4
+    t.decimal "list_price", precision: 10, scale: 2, null: false
+    t.integer "publication_year", limit: 4, null: false
     t.string "edition"
     t.string "image_url"
     t.integer "publisher_id", null: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_06_003059) do
   end
 
   create_table "publishers", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_publishers_on_name", unique: true
