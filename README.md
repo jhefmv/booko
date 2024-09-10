@@ -59,7 +59,7 @@ bundle exec rspec  spec --format=documentation
 
 ## Features
 
-### Converting ISBN
+### Converting ISBN API
 
 Make a POST HTTP request by passing a valid ISBN. Invalid ISBN will not be converted and the API will respond with successful status and an empty string.
 
@@ -77,7 +77,7 @@ POST /isbn/convert.json, { isbn: {value: "ISBN13 978-1-60309-398-9" } }
 POST /isbn/convert.json, { isbn: {value: "ISBN-10 1603093982" } }
 ```
 
-### Retrieving book information
+### Retrieving book information API
 
 Make a GET HTTP request and pass a valid ISBN-10 or ISBN-13.
 
@@ -113,3 +113,8 @@ Results:
 ```
 
 If book does not exist, the API will respond with **404** status. If the ISBN is invalid, **400** error status will be returned.
+
+### Front-end
+
+- Search bar for navigating to book pages
+- Hidden page (`/pages/isbn-convert`) for converting ISBN-13 to ISBN-10 (and vice versa)
