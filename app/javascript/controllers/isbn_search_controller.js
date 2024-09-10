@@ -1,22 +1,24 @@
 import { Controller } from "@hotwired/stimulus"
-import { FetchRequest, get } from '@rails/request.js'
+import { get } from '@rails/request.js'
+import { isbnValid } from "custom_modules/isbn_kit"
 
-// Connects to data-controller="isbn-search"
 export default class extends Controller {
   static targets = ["isbn"]
  
   async search(e) {
     const isbn = this.isbnTarget.value
 
-    e.preventDefault();
+    e.preventDefault()
 
-    const response = await get(`/isbn/${isbn}`, {responseKind: "json"})
-                      .then((response) => response.json)
-    if (response["data"]) {
-      console.log("response: ", response.json);
-      const data = response["data"],
-        isbn = data && data["attributes"] && data["attributes"]["isbn13"];
-      if (isbn) window.location = `/book/${isbn}`;
+    if (isbnValid(isbn)) {
+      const response = await get(`/isbn/${isbn}`, {responseKind: "json"})
+                                .then((response) => response.json)
+      const isbn13 = response?.data?.attributes?.isbn13
+      if (isbn13) window.location.href = `/book/${isbn13}`
+    } else {
+      const isbnToastEl = document.getElementById('isbnToast')
+      const isbnToast = bootstrap.Toast.getOrCreateInstance(isbnToastEl)
+      isbnToast.show()
     }
   }
 }

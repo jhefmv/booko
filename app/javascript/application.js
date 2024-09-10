@@ -7,3 +7,5 @@ import "popper"
 import "bootstrap"
 
 import "@rails/request.js"
+
+import "custom_modules/isbn_kit"
