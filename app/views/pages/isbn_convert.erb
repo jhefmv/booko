@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card border-0">
+      <div class="card-body">
+        <h1 class="card-title fw-bolder mb-5">ISBN Conversion</h1>
+        <form data-controller="isbn-convert">
+          <p>Convert ISBN-10 to ISBN-13 and vice-versa</p>
+          <div class="row mt-4">
+            <label for="fromIsbn" class="col-sm-3 col-form-label col-form-label">ISBN</label>
+            <div class="col-sm-8">
+              <input class="form-control form-control-lg" id="fromIsbn" data-isbn-convert-target="fromIsbn" aria-label="Convert" aria-describedby="isbnHelp">
+            </div>
+          </div>
+          <div class="row my-2">
+            <label for="toIsbn" class="col-sm-3 col-form-label col-form-label">Converted</label>
+            <div class="col-sm-8">
+              <input type="email" class="form-control form-control-lg bg-white" id="toIsbn" data-isbn-convert-target="toIsbn" disabled>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary" data-action="click->isbn-convert#convert">Convert</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card border-0">
+      <div class="card-body">
+        <%= image_tag("pages/hero illustration.svg", class: "img-fluid border-0") %>
+      </div>
+    </div>
+  </div>
+</div>

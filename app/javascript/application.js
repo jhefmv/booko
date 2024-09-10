@@ -8,4 +8,4 @@ import "bootstrap"
 
 import "@rails/request.js"
 
-import "custom_modules/isbn_kit"
+// import "custom_modules/isbn"

@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import { get } from '@rails/request.js'
-import { isbnValid } from "custom_modules/isbn_kit"
+import { isbnValid } from "custom_modules/isbn/validate"
 
 export default class extends Controller {
   static targets = ["isbn"]

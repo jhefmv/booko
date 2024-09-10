@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import IsbnConvertController from "./isbn_convert_controller"
+application.register("isbn-convert", IsbnConvertController)
+
 import IsbnSearchController from "./isbn_search_controller"
 application.register("isbn-search", IsbnSearchController)

@@ -93,7 +93,7 @@ module IsbnKit
     tisbn = (base == 10) ? isbn.rjust(13, "978") : isbn
     group = prefix = nil
     load_ranges.each_pair do |g, prefixes|
-      next unless tisbn.match("^#{g}")
+      next unless tisbn.match?("^#{g}")
       group = g
 
       pre_loc = group.length
@@ -108,7 +108,7 @@ module IsbnKit
       break
     end
 
-    return tisbn unless group && prefix
+    return isbn unless group && prefix
 
     prefix = sprintf("%0#{prefix[:length]}d", prefix[:number])
     parts = [group[0..2], group[3..], prefix, tisbn[(group.length + prefix.length)..-2], tisbn[-1..]]

@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   # book info by isbn
   get "book/:isbn", to: "books#show"
 
+  # convert
+  get "pages/isbn-convert", to: "pages#isbn_convert"
+
   # catch all, redirect missing routes to home
   match "*unmatched", to: "application#page_not_found", via: :all
 end
