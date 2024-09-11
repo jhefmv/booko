@@ -117,4 +117,4 @@ If book does not exist, the API will respond with **404** status. If the ISBN is
 ### Front-end
 
 - Search bar for navigating to book pages
-- Hidden page (`/pages/isbn-convert`) for converting ISBN-13 to ISBN-10 (and vice versa)
+- Page (`/pages/isbn-convert`) for converting ISBN-13 to ISBN-10 (and vice versa)
