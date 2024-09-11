@@ -17,6 +17,8 @@ export default class extends Controller {
 
     e.preventDefault()
 
+    if (!isbn) return;
+
     if (isbnValid(isbn)) {
       const response = await get(`/isbn/${isbn}`, {responseKind: "json"})
                                 .then((response) => response.json)

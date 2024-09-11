@@ -14,7 +14,7 @@ class Book < ApplicationRecord
   end
 
   def author_names
-    authors&.map { |a| [a.first_name, a.middle_name, a.last_name].join(" ") }&.join(", ")
+    authors&.map { |a| [a.first_name, a.middle_name, a.last_name].compact.join(" ") }&.join(", ")
   end
 
   def isbn13_correctness
